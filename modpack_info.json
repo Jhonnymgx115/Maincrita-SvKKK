@@ -1,0 +1,24 @@
+{
+  "modpack_id": "horror-land-2",
+  "name": "Horror Land 2 (NeoForge 1.21.1 Edition)",
+  "minecraft_version": "1.21.1",
+  "loader": "neoforge",
+  "recommended_ram_gb": 8,
+  "description": "Entorno de terror psicológico con IA avanzada de mobs y audio posicional.",
+  "core_mods": [
+    "the-man-from-the-fog",
+    "cave-dweller-reimagined",
+    "from-the-fog",
+    "sanity-descent-into-madness",
+    "ambient-sounds",
+    "sound-physics-remastered",
+    "tough-as-nails",
+    "first-aid",
+    "better-combat",
+    "azurelib",
+    "geckolib",
+    "modernfix",
+    "ferritecore",
+    "spark"
+  ]
+}
