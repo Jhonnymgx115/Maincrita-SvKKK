@@ -1,0 +1,27 @@
+{
+  "modpack_id": "modded-together",
+  "name": "Modded Together (Early Co-op Editions / NeoForge 1.21.1)",
+  "minecraft_version": "1.21.1",
+  "loader": "neoforge",
+  "recommended_ram_gb": 8,
+  "description": "Modpack enfocado en cooperación comunitaria, voz de proximidad, cocina y aventuras en equipo.",
+  "core_mods": [
+    "simple-voice-chat",
+    "ftb-teams",
+    "ftb-chunks",
+    "ftb-quests",
+    "create",
+    "waystones",
+    "comforts",
+    "farmers-delight",
+    "alexs-mobs",
+    "sophisticated-backpacks",
+    "modernfix",
+    "ferritecore",
+    "spark"
+  ],
+  "network_requirements": {
+    "voice_chat_protocol": "UDP",
+    "voice_chat_port_default": 24454
+  }
+}
