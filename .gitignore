@@ -1,0 +1,53 @@
+# Minecraft Server Ignored Files
+# Worlds & Save Data
+world/
+world_nether/
+world_the_end/
+saves/
+dimensions/
+backups/
+
+# Runtime, Cache & Logs
+logs/
+crash-reports/
+debug/
+*.log
+*.log.gz
+usercache.json
+usernamecache.json
+session.lock
+
+# Server State & Credentials
+ops.json
+whitelist.json
+banned-ips.json
+banned-players.json
+server.properties
+eula.txt
+
+# Server binaries & Auto-generated Libraries
+libraries/
+neoforge-*.jar
+minecraft_server.*.jar
+run.bat
+run.sh
+installer.log
+
+# Profiling and dumps
+*.hprof
+*.dump
+spark/
+
+# IDE and OS
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment and Secrets
+.env
+.env.local
+*.secret
+pterodactyl_credentials.json
