@@ -1,0 +1,57 @@
+name: Pterodactyl Azure Sync Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - 'modpack/**'
+      - 'feature/**'
+      - 'fix/**'
+    paths:
+      - 'config/**'
+      - 'defaultconfigs/**'
+      - 'kubejs/**'
+      - 'mods/**'
+      - 'scripts/**'
+  workflow_dispatch:
+
+jobs:
+  deploy-to-pterodactyl:
+    name: Sync Mods & Configs to Pterodactyl on Azure
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Validate TOML/JSON Configurations
+        run: |
+          echo "Validando sintaxis de archivos de configuración..."
+          python -c "
+          import glob, json
+          for f in glob.glob('config/**/*.json', recursive=True):
+              try:
+                  with open(f) as fp: json.load(fp)
+              except Exception as e:
+                  print(f'Error en JSON {f}: {e}')
+                  exit(1)
+          print('Todos los archivos JSON son válidos.')
+          "
+
+      - name: Trigger Pterodactyl Deployment
+        env:
+          PTERODACTYL_URL: ${{ secrets.PTERODACTYL_URL }}
+          PTERODACTYL_API_KEY: ${{ secrets.PTERODACTYL_API_KEY }}
+          PTERODACTYL_SERVER_ID: ${{ secrets.PTERODACTYL_SERVER_ID }}
+          GITHUB_REF_NAME: ${{ github.ref_name }}
+        run: |
+          if [ -z "$PTERODACTYL_URL" ] || [ -z "$PTERODACTYL_API_KEY" ] || [ -z "$PTERODACTYL_SERVER_ID" ]; then
+            echo "⚠️ [ADVERTENCIA] Secretos de Pterodactyl no configurados en el repositorio."
+            echo "Configura PTERODACTYL_URL, PTERODACTYL_API_KEY y PTERODACTYL_SERVER_ID en GitHub Secrets."
+            exit 0
+          fi
+          python scripts/pterodactyl_sync.py "$GITHUB_REF_NAME"

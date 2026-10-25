@@ -1,0 +1,49 @@
+# Azure DevOps Pipeline - Pterodactyl Minecraft Server Sync
+trigger:
+  branches:
+    include:
+      - main
+      - modpack/*
+      - feature/*
+      - fix/*
+  paths:
+    include:
+      - config/*
+      - defaultconfigs/*
+      - kubejs/*
+      - mods/*
+      - scripts/*
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  - group: PterodactylSecrets # Define PTERODACTYL_URL, PTERODACTYL_API_KEY, PTERODACTYL_SERVER_ID
+
+steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.11'
+  displayName: 'Setup Python Runtime'
+
+- script: |
+    echo "Iniciando validación de configuraciones..."
+    python -c "
+    import glob, json
+    for f in glob.glob('config/**/*.json', recursive=True):
+        try:
+            with open(f) as fp: json.load(fp)
+        except Exception as e:
+            print(f'Error en {f}: {e}')
+            exit(1)
+    print('Sintaxis de configuraciones verificada correctamente.')
+    "
+  displayName: 'Validate Mod Configs'
+
+- script: |
+    python scripts/pterodactyl_sync.py "$(Build.SourceBranchName)"
+  env:
+    PTERODACTYL_URL: $(PTERODACTYL_URL)
+    PTERODACTYL_API_KEY: $(PTERODACTYL_API_KEY)
+    PTERODACTYL_SERVER_ID: $(PTERODACTYL_SERVER_ID)
+  displayName: 'Execute Pterodactyl Sync via API'
