@@ -1,0 +1,28 @@
+{
+  "modpack_id": "atm10",
+  "name": "All The Mods 10 (NeoForge 1.21.1 Edition)",
+  "minecraft_version": "1.21.1",
+  "loader": "neoforge",
+  "recommended_ram_gb": 12,
+  "description": "Modpack Kitchen-Sink de gran escala con tecnología, magia, dimensiones y misiones.",
+  "core_mods": [
+    "mekanism",
+    "mekanism-generators",
+    "applied-energistics-2",
+    "powah-rearchitected",
+    "industrial-foregoing",
+    "ender-io",
+    "ars-nouveau",
+    "irons-spells-n-spellbooks",
+    "mystical-agriculture",
+    "terralith",
+    "the-twilight-forest",
+    "sophisticated-backpacks",
+    "pipez",
+    "modernfix",
+    "ferritecore",
+    "immediatelyfast",
+    "chunky",
+    "spark"
+  ]
+}
