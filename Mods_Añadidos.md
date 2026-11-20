@@ -25,13 +25,14 @@
 - Tectonic
 - Twigs
 - Chunk Loader
+- Create More: Package Couriers
+- Better combat
+- Skin restorer
 
 
 ## Pendientes a probar
 - Arachnophobia y arphex   **| | |NO LO QUIERO| | |**
-- Skin restorer plugin
 - Alexs' caves ** No tiene port oficial para la version **
-- Better combat
 
 ## Addons del Create
 - Create: Enchantmente industry ✅Carga sin error✅
