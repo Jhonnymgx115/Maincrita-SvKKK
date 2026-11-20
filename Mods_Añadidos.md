@@ -16,17 +16,17 @@
 - Bosses of mass destruction 
 - Haze and stuff 
 - Chunky 
-
-## Pendientes a probar
 - Spartan weaponry Compact con ice and fire
-- Arachnophobia y arphex   **| | |NO LO QUIERO| | |**
-- I am music player renewed.  **| | |PROBAR VERSION ESPECIFICA| | |**
+- - I am music player renewed.  **| | |PROBAR VERSION ESPECIFICA| | |**
 - Ht tree chops o falling trees (para que solo mines el bloque de abajo y caiga todo el arbol) 
-- Immersive aircraft ( vehiculos de inicio simples que cualquiera puede hacer) 
-- Skin restorer plugin
-- Alexs' caves 
+- Immersive aircraft ( vehiculos de inicio simples que cualquiera puede hacer)
 - Born in caos
 - Effortless building
+
+## Pendientes a probar
+- Arachnophobia y arphex   **| | |NO LO QUIERO| | |**
+- Skin restorer plugin
+- Alexs' caves ** No tiene port oficial para la version **
 - Better combat
 
 ## Addons del Create
