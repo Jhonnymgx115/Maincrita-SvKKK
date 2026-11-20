@@ -22,6 +22,10 @@
 - Immersive aircraft ( vehiculos de inicio simples que cualquiera puede hacer)
 - Born in caos
 - Effortless building
+- Tectonic
+- Twigs
+- Chunk Loader
+
 
 ## Pendientes a probar
 - Arachnophobia y arphex   **| | |NO LO QUIERO| | |**
